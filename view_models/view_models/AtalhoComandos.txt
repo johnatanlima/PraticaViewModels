@@ -1,0 +1,20 @@
+
+
+
+ETAPAS 
+    -- Relacionamentos Ok
+    -- Models Ok
+    -- ViewModels (Testar com Configuração manual)
+    -- Anotações para Teste
+    -- Mapeamentos corrigidos
+    
+PRÓXIMAS
+    -- Gerar Migration
+        -- Observar e estudar campos gerados
+    -- Realizar Criação do banco de dados 
+    -- Criação dos Controllers
+        -- Controller Categoria
+        -- Controller Produto
+            -- Observar e estudar dado gerados
+            
+            
