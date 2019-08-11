@@ -5,15 +5,15 @@ ETAPAS
     -- ViewModels (Testar com Configuração manual)
     -- Anotações para Teste Ok
     -- Mapeamentos corrigidos Ok
-    
+  	-- Gerar Migration Ok 
+        -- Observar e estudar campos gerados Ok 
+    -- Realizar Criação do banco de dados Ok  
 
 PRÓXIMAS
-    -- Gerar Migration Ok 
-        -- Observar e estudar campos gerados Ok 
-    -- Realizar Criação do banco de dados Ok
+  
     -- Criação dos Controllers
-        -- Controller Categoria
-        -- Controller Produto
+        -- Controller Categoria Ok 
+        -- Controller Produto 
             -- Observar e estudar dado gerados
             
 * GERAR SCAFFOLDING de CONTROLLERS E VIEWS ATRAVÉS DO TERMINAL | VISUAL STUDIO CODE
