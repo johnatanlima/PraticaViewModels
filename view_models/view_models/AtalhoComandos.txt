@@ -5,9 +5,10 @@ ETAPAS
     -- Relacionamentos Ok
     -- Models Ok
     -- ViewModels (Testar com Configuração manual)
-    -- Anotações para Teste
-    -- Mapeamentos corrigidos
+    -- Anotações para Teste Ok
+    -- Mapeamentos corrigidos Ok
     
+
 PRÓXIMAS
     -- Gerar Migration
         -- Observar e estudar campos gerados
@@ -17,4 +18,22 @@ PRÓXIMAS
         -- Controller Produto
             -- Observar e estudar dado gerados
             
-            
+* GERAR SCAFFOLDING de CONTROLLERS E VIEWS ATRAVÉS DO TERMINAL
+
+    //Adicionar REFERÊNCIA do pacote ao projeto
+        dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design 
+
+    //Informar possibilidades a serem utilizadas
+        dotnet-aspnet-codegenerator --help
+
+    //Comando para gerar CONTROLLER e VIEWS
+    //Mostrar todos os parâmetros possíveis para CONTROLLER
+        dotnet-aspnet-codegenerator controller --help
+    
+    //COMANDO PARA CRIAR O CONTROLLER
+        dotnet-aspnet-codegenerator controller -name CategoriaController -m Categoria -dc viewmodeldbcontexto -uld -outDir Controllers  
+
+* GERAR BANCO DE DADOS ATRAVÉS DE MIGRATION. 
+
+    //Comando para gerar o script de criação de esquemas e tabelas descritas por DbSet. 
+        
