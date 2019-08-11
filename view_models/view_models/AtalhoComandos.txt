@@ -1,6 +1,4 @@
 
-
-
 ETAPAS 
     -- Relacionamentos Ok
     -- Models Ok
@@ -10,20 +8,20 @@ ETAPAS
     
 
 PRÓXIMAS
-    -- Gerar Migration
-        -- Observar e estudar campos gerados
-    -- Realizar Criação do banco de dados 
+    -- Gerar Migration Ok 
+        -- Observar e estudar campos gerados Ok 
+    -- Realizar Criação do banco de dados Ok
     -- Criação dos Controllers
         -- Controller Categoria
         -- Controller Produto
             -- Observar e estudar dado gerados
             
-* GERAR SCAFFOLDING de CONTROLLERS E VIEWS ATRAVÉS DO TERMINAL
+* GERAR SCAFFOLDING de CONTROLLERS E VIEWS ATRAVÉS DO TERMINAL | VISUAL STUDIO CODE
 
     //Adicionar REFERÊNCIA do pacote ao projeto
         dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design 
 
-    //Informar possibilidades a serem utilizadas
+    //Visualizar possibilidades a serem utilizadas
         dotnet-aspnet-codegenerator --help
 
     //Comando para gerar CONTROLLER e VIEWS
@@ -31,9 +29,14 @@ PRÓXIMAS
         dotnet-aspnet-codegenerator controller --help
     
     //COMANDO PARA CRIAR O CONTROLLER
-        dotnet-aspnet-codegenerator controller -name CategoriaController -m Categoria -dc viewmodeldbcontexto -uld -outDir Controllers  
+        dotnet-aspnet-codegenerator controller -name CategoriaController -m Categoria -dc viewmodeldbcontexto -uld -outDir Controllers -scripts
 
 * GERAR BANCO DE DADOS ATRAVÉS DE MIGRATION. 
 
-    //Comando para gerar o script de criação de esquemas e tabelas descritas por DbSet. 
-        
+    //Comando para gerar o script de criação de esquemas e tabelas descritas na classe contexto. 
+        dotnet ef migrations add 001
+    
+    //Criar o banco de dados pelo script gerado acima
+        dotnet ef database update
+    
+     
