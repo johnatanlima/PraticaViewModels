@@ -8,13 +8,21 @@ ETAPAS
   	-- Gerar Migration Ok 
         -- Observar e estudar campos gerados Ok 
     -- Realizar Criação do banco de dados Ok  
-
-PRÓXIMAS
-  
     -- Criação dos Controllers
         -- Controller Categoria Ok 
-        -- Controller Produto 
-            -- Observar e estudar dado gerados
+        -- Controller Produto OK 
+        -- Observar e estudar dado gerados
+
+PRÓXIMAS
+    -- Testar aplicação
+    -- Realizar Registro de dados
+        -- Observar esses registros no banco de dados
+    -- Incluir VIEWS MODELS 
+    -- Incluir Partial VIEWS
+    -- Iniciar Customização
+    -- 
+
+   
             
 * GERAR SCAFFOLDING de CONTROLLERS E VIEWS ATRAVÉS DO TERMINAL | VISUAL STUDIO CODE
 
