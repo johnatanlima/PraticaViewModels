@@ -12,6 +12,7 @@ ETAPAS
         -- Controller Categoria Ok 
         -- Controller Produto OK 
         -- Observar e estudar dado gerados
+    
 
 PRÓXIMAS
     -- Testar aplicação

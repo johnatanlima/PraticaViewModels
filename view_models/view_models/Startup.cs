@@ -35,6 +35,7 @@ namespace view_models
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            AutoMapperConfig.RegisterMappings();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +50,9 @@ namespace view_models
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            //Config para mapeamento entre ViewModel e Model Domain
+            AutoMapperConfig.RegisterMappings();
+            
             // Definindo a cultura padrão: pt-BR
             var supportedCultures = new[] { new CultureInfo("pt-BR") };
             app.UseRequestLocalization(new RequestLocalizationOptions
