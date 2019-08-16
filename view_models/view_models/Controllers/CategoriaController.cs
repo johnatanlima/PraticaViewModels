@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,28 @@ namespace view_models.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Categorias.ToListAsync());
+        }
+
+        [Route("/{id?}/produtos")]
+        public IActionResult CategProdutos(int id)
+        {
+            
+            var objLista = _context.Produtos.Include(x => x.Categoria).Where(x => x.CategoriaId == id);
+            
+            List<decimal> lista = new List<decimal>();
+
+            decimal soma2=0;
+
+            foreach (var tot in objLista)
+            {
+               lista.Add(tot.Preco);
+               soma2 = soma2 + tot.Preco;
+            }
+            
+            ViewData["listapreco"] = lista.Sum();
+            ViewData["soma22"] = soma2;
+
+            return View(objLista);
         }
 
         // GET: Categoria/Details/5

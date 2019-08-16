@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using view_models.Models;
+using view_models.ViewModels;
 
 namespace view_models
 {
@@ -35,7 +37,14 @@ namespace view_models
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            AutoMapperConfig.RegisterMappings();
+            var config = new AutoMapper.MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<CategoriaViewModel, Categoria>();
+            });
+            
+            IMapper mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,9 +58,6 @@ namespace view_models
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            //Config para mapeamento entre ViewModel e Model Domain
-            AutoMapperConfig.RegisterMappings();
             
             // Definindo a cultura padrão: pt-BR
             var supportedCultures = new[] { new CultureInfo("pt-BR") };

@@ -1,16 +1,16 @@
-﻿/* using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace view_models.ViewModels
 {
-    public class ProdutoCategorias
+    public class CategoriaViewModel
     {
-        public int ProdutoId { get; set; }
+        public string CategoriaId {get; set;}
         public string Nome { get; set; }
-        public string Preco { get; set; }
+        public string QuantidadeProdutos { get; set; }
+        public decimal SomaProdutos {get; set;}
 
+        public ICollection<decimal> total {get; set;}
+        
     }
 }
- */
+
