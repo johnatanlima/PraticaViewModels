@@ -47,6 +47,7 @@ namespace view_models.Controllers
             return View(objLista);
         }
 
+        [Route("produtostotal")]
         //GET IMPLEMENTANDO UMA VIEW MODEL
         public IActionResult Index3()
         {
