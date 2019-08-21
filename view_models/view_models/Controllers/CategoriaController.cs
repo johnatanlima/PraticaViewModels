@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using view_models.Models;
+using view_models.ViewModels;
 
 namespace view_models.Controllers
 {
@@ -22,6 +24,7 @@ namespace view_models.Controllers
             return View(await _context.Categorias.ToListAsync());
         }
 
+        //GET CUSTOMIZADO - RECEBE PARAM CATEGORIA E RETORNA SEUS PRODUTOS
         [Route("/{id?}/produtos")]
         public IActionResult CategProdutos(int id)
         {
@@ -42,6 +45,28 @@ namespace view_models.Controllers
             ViewData["soma22"] = soma2;
 
             return View(objLista);
+        }
+
+        //GET IMPLEMENTANDO UMA VIEW MODEL
+        public IActionResult Index3()
+        {
+            var objJoin = _context.Categorias.Include(x => x.Produtos).ToList();
+
+            List<CategoriaViewModel> categoriaVM = new List<CategoriaViewModel>();
+            
+            foreach(var item in objJoin){
+
+                CategoriaViewModel vm = new CategoriaViewModel();
+                
+                vm.CategoriaId = item.CategoriaId.ToString();
+                vm.Nome = item.Nome;
+                vm.QuantidadeProdutos = item.Produtos.Count().ToString();
+                vm.SomaProdutos = item.Produtos.Sum(x => x.Preco);
+
+                categoriaVM.Add(vm);
+            }
+            
+            return View(categoriaVM.ToList());     
         }
 
         // GET: Categoria/Details/5

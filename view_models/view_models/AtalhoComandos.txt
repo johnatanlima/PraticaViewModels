@@ -15,10 +15,11 @@ ETAPAS
     
 
 PRÓXIMAS
-    -- Testar aplicação
-    -- Realizar Registro de dados
-        -- Observar esses registros no banco de dados
-    -- Incluir VIEWS MODELS 
+    -- Testar aplicação Ok 
+    -- Realizar Registro de dados Ok 
+        -- Observar esses registros no banco de dados Ok 
+
+    -- Incluir VIEWS MODELS Ok 
     -- Incluir Partial VIEWS
     -- Iniciar Customização
     -- 

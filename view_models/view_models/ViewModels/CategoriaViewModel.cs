@@ -8,8 +8,6 @@ namespace view_models.ViewModels
         public string Nome { get; set; }
         public string QuantidadeProdutos { get; set; }
         public decimal SomaProdutos {get; set;}
-
-        public ICollection<decimal> total {get; set;}
         
     }
 }
